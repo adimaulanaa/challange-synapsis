@@ -1,7 +1,7 @@
 # challange-synapsis
 
 1. Login Page (25 Point) 
-a.Point A (Done) 
+a. Point A (Done) 
 b. Point B (X)
 
 2. List Assessment Page

@@ -10,7 +10,7 @@ class SurveyBloc extends Bloc<SurveyEvent, SurveyState> {
   })  : _survey = survey,
         super(SurveyInitial()) {
     on<LoadSurvey>(onLoadSurvey);
-    on<LoadWarga>(onLoadWarga);
+    on<LoadSurveyId>(onLoadSurveyId);
   }
 
   final SurveyRepository _survey;
@@ -27,14 +27,14 @@ class SurveyBloc extends Bloc<SurveyEvent, SurveyState> {
     );
   }
 
-  void onLoadWarga(LoadWarga event, Emitter<SurveyState> emit) async {
-    emit(WargaLoading());
+  void onLoadSurveyId(LoadSurveyId event, Emitter<SurveyState> emit) async {
+    emit(SurveyIdLoading());
 
-    final failureOrSuccessOnline = await _survey.survey();
+    final failureOrSuccessOnline = await _survey.surveyId(event.id);
     emit(
       failureOrSuccessOnline.fold(
-        (failure) => WargaFailure(error: mapFailureToMessage(failure)),
-        (success) => SurveyLoaded(data: success),
+        (failure) => SurveyIdFailure(error: mapFailureToMessage(failure)),
+        (success) => SurveyIdLoaded(data: success),
       ),
     );
   }

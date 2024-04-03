@@ -7,8 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:synapsis/features/survey/data/models/survey_model.dart';
 import 'package:synapsis/features/survey/presentation/bloc/survey_event.dart';
-import 'package:synapsis/features/survey/presentation/input_survey_checkbox.dart';
-import 'package:synapsis/features/survey/presentation/input_survey_radio.dart';
+import 'package:synapsis/features/survey/presentation/input_survey.dart';
 import 'package:synapsis/framework/managers/helper.dart';
 import 'package:synapsis/framework/widgets/loading_indicator.dart';
 import 'package:synapsis/utils/colors.dart';
@@ -44,10 +43,6 @@ class _SurveyScreenState extends State<SurveyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return _build(context);
-  }
-
-  Widget _build(BuildContext context) {
     return MultiBlocListener(
       listeners: [
         BlocListener<SurveyBloc, SurveyState>(listener: (context, state) async {
@@ -111,18 +106,11 @@ class _SurveyScreenState extends State<SurveyScreen> {
                         }
                         return InkWell(
                           onTap: () {
-                            // Navigator.pushReplacement(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) =>
-                            //         InputSurveyRadio(data: e.participants!),
-                            //   ),
-                            // );
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    InputSurveyCheckbox(data: e.participants!),
+                                    const InputSurvey(data: '4l3bjupuwj'),
                               ),
                             );
                           },

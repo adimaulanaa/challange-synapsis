@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:synapsis/features/survey/data/models/survey_model.dart';
 import 'package:synapsis/utils/colors.dart';
 import 'package:synapsis/utils/text_style.dart';
 
 class InputSurveyCheckbox extends StatefulWidget {
-  final List<Participant> data;
+  final String data;
   const InputSurveyCheckbox({super.key, required this.data});
 
   @override

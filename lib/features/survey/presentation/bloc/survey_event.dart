@@ -9,6 +9,15 @@ abstract class SurveyEvent extends Equatable {
 
 class LoadSurvey extends SurveyEvent {}
 
-class LoadWarga extends SurveyEvent {}
+class LoadSurveyId extends SurveyEvent {
+  final String id;
 
-class LoadHistory extends SurveyEvent {}
+  const LoadSurveyId({
+    required this.id,
+  });
+
+  @override
+  List<Object> get props => [
+        id,
+      ];
+}

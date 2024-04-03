@@ -1,5 +1,5 @@
+import 'package:synapsis/features/survey/data/models/survey_id_model.dart';
 import 'package:synapsis/features/survey/data/models/survey_model.dart';
-import 'package:synapsis/utils/model.dart';
 
 abstract class SurveyState {
   List<Object> get props => [];
@@ -9,34 +9,31 @@ class SurveyInitial extends SurveyState {}
 
 class SurveyLoading extends SurveyState {}
 
-class WargaLoading extends SurveyState {}
+class SurveyIdLoading extends SurveyState {}
 
 class SurveyLoaded extends SurveyState {
   SurveyLoaded({
-    this.isFromCacheFirst = false,
     this.data,
   });
 
-  bool isFromCacheFirst;
   SurveyModel? data;
 
   @override
   List<Object> get props => [
-        isFromCacheFirst,
         data!,
       ];
 }
 
-class WargaLoaded extends SurveyState {
-  WargaLoaded({
-    this.total,
+class SurveyIdLoaded extends SurveyState {
+  SurveyIdLoaded({
+    this.data,
   });
 
-  DashModel? total;
+  SurveyIdModel? data;
 
   @override
   List<Object> get props => [
-        total!,
+        data!,
       ];
 }
 
@@ -56,8 +53,8 @@ class SurveyFailure extends SurveyState {
   String toString() => 'Survey Failure { error: $error }';
 }
 
-class WargaFailure extends SurveyState {
-  WargaFailure({
+class SurveyIdFailure extends SurveyState {
+  SurveyIdFailure({
     required this.error,
   });
 
