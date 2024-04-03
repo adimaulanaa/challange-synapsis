@@ -118,34 +118,39 @@ class _InputSurveyState extends State<InputSurvey> {
                     ),
                   ),
                 ),
-                Container(
-                  // width: size.width,
-                  padding: const EdgeInsets.only(
-                      left: 10, top: 5, bottom: 5, right: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: AppColors.blackColor,
-                  ),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/list-data.svg',
-                        color: AppColors.bgColor,
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        '$index/$total',
-                        style: TextStyle(
-                          fontFamily: "Poppins",
-                          fontStyle: FontStyle.normal,
+                InkWell(
+                  onTap: () {
+                    _showBottom(context);
+                  },
+                  child: Container(
+                    // width: size.width,
+                    padding: const EdgeInsets.only(
+                        left: 10, top: 5, bottom: 5, right: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: AppColors.blackColor,
+                    ),
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          'assets/icons/list-data.svg',
                           color: AppColors.bgColor,
-                          fontSize: 15,
-                          fontWeight: medium,
                         ),
-                      ),
-                    ],
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          '$index/$total',
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontStyle: FontStyle.normal,
+                            color: AppColors.bgColor,
+                            fontSize: 15,
+                            fontWeight: medium,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -488,5 +493,100 @@ class _InputSurveyState extends State<InputSurvey> {
       }
     }
     setState(() {});
+  }
+
+  void choice(String id) {
+    for (var e in question) {
+      if (e.number == id) {
+        questionSction = e.section ?? '';
+        questionNumber = e.number!;
+        questionType = e.type ?? '';
+        questionName = e.questionName ?? '';
+        index = int.parse(e.number!);
+        options = e.options!;
+      }
+    }
+    setState(() {});
+  }
+
+  Future<dynamic> _showBottom(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        constraints: BoxConstraints(maxHeight: size.height * 0.45),
+        backgroundColor: Colors.transparent,
+        builder: (context) {
+          return StatefulBuilder(builder: (BuildContext context, setState) {
+            return Container(
+              height: size.height - 30.0,
+              width: size.width,
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16.0),
+                    topRight: Radius.circular(16.0),
+                  )),
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Survei Question',
+                      style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontStyle: FontStyle.normal,
+                        color: AppColors.blackColor,
+                        fontSize: 16,
+                        fontWeight: bold,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Wrap(
+                      children: question.map((op) {
+                        return Wrap(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                choice(op.number!);
+                                Navigator.of(context).pop();
+                              },
+                              child: Container(
+                                height: size.height * 0.06,
+                                width: size.width * 0.15,
+                                padding:
+                                    const EdgeInsets.only(left: 20, right: 20),
+                                margin: const EdgeInsets.only(right: 20),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(
+                                    color: AppColors.blackColor,
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    op.number!,
+                                    style: TextStyle(
+                                      fontFamily: "Poppins",
+                                      fontStyle: FontStyle.normal,
+                                      color: AppColors.blackColor,
+                                      fontSize: 15,
+                                      fontWeight: medium,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        );
+                      }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          });
+        });
   }
 }
