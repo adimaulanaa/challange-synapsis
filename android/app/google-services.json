@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "305764832360",
+    "project_id": "synapsis",
+    "storage_bucket": "synapsis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305764832360:android:14ed5e46ee509e0b7057dd",
+        "android_client_info": {
+          "package_name": "id.app.adimaulana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305764832360-31acb20q9cq9vuuemf9k42atokl8mj9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgvkjNeeuKAil9V_aSJnXL0ulipqROYmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305764832360-31acb20q9cq9vuuemf9k42atokl8mj9v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

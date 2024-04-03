@@ -1,0 +1,23 @@
+{
+   "env": "prod",
+   "app_id": "id.app.adimaulana",
+   "app_name": "KANG-WS",
+   "app_title": "KANG-WS",
+   "app_version": "0.0.0",
+   "api_base_url": "https://dev-api-lms.apps-madhani.com/v1",
+   "api_config_path": "/default",
+   "api_auth_url":  "https://dev-api-lms.apps-madhani.com/v1",
+   "api_auth_path": "/login",
+   "show_walkthrough": "0",
+   "config_notification_enabled": true,
+   "config_connection_checker_enabled": true,
+   "config_connection_checker_interval_in_sec": 10,
+   "config_connection_checker_addresses": "[{\"host\":\"35.213.190.34\",\"port\":80,\"timeout_secs\":30},{\"host\":\"103.81.249.50\",\"port\":80,\"timeout_secs\":30}]",
+   "config_version": "v1",
+   "config_timestamp": 1594548967,
+   "config_http_timeout": 30,
+   "config_http_upload_image_timeout": 90,
+   "config_image_compress_quality": 70,
+   "config_canvassing_show_complaint": true
+ }
+ 

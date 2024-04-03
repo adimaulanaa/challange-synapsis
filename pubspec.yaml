@@ -1,0 +1,112 @@
+name: synapsis
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.1+1 # android
+# version: 1.0.0+5 # ios
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  another_flushbar: ^1.12.30
+  bottom_sheet: ^3.1.2
+  cool_alert: ^2.0.1
+  dartz: ^0.10.1
+  device_info_plus: ^9.0.2
+  # dio_http_cache:
+  #   git: https://github.com/danilof/dio-http-cache
+  dio: ^5.2.0
+  dotted_border: ^2.0.0+1
+  easy_refresh: ^3.0.4+4
+  equatable: ^2.0.3
+  ext_storage:
+    git:
+      url: https://github.com/lavahasif/ext_storage_ups.git
+  firebase_core: ^2.1.1
+  firebase_crashlytics: ^3.0.3
+  flutter_bloc: ^8.0.1
+  flutter_dotenv: ^5.0.2
+  flutter_form_builder: null
+  form_builder_validators: null
+  # flutter_image_compress: ^1.1.0
+  flutter_progress_hud: ^2.0.2
+  flutter_svg: ^1.0.3
+  # fluttertoast: ^8.0.9
+  # geocoding: ^2.0.4
+  # geolocator: ^8.2.0
+  get_it: null
+  global_configuration: ^2.0.0-nullsafety.1
+  google_fonts: null
+  hive_flutter: ^1.1.0
+  hive: ^2.1.0
+  iconsax: ^0.0.8
+  image_picker: ^0.8.6
+  # infinite_scroll: ^1.1.1
+  internet_connection_checker: 0.0.1+3
+  # intl: ^0.17.0
+  loading_indicator: null
+  # mime: ^1.0.2
+  # package_info_plus: ^4.0.2
+  path_provider: ^2.0.4
+  # pin_code_fields: ^7.4.0
+  # qr_flutter: ^4.1.0
+  shared_preferences: ^2.0.15
+  # smooth_page_indicator: ^1.0.0+2
+  # timer_count_down: ^2.2.1
+  uuid: ^3.0.4
+  realm: ^1.6.0
+  open_file: ^3.3.2
+  pdf: ^3.10.7
+  cookie_jar: ^4.0.8
+  dio_cookie_manager: ^3.1.1
+  flutter_file_dialog: ^3.0.2
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_launcher_icons: ^0.13.1
+  change_app_package_name: ^1.1.0
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  remove_alpha_ios: true
+  # min_sdk_android: 21
+  # flutter pub run flutter_launcher_icons
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/cfg/
+    - assets/json/
+    - .env
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/font/poppins/Poppins-Regular.otf
+          weight: 400
+        - asset: assets/font/poppins/Poppins-Medium.otf
+          weight: 500
+        - asset: assets/font/poppins/Poppins-SemiBold.otf
+          weight: 600
+        - asset: assets/font/poppins/Poppins-Bold.otf
+          weight: 700
+        - asset: assets/font/poppins/Poppins-ExtraBold.otf
+          weight: 800
